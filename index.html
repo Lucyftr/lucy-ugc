@@ -1,0 +1,1472 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucy Fetter — Créatrice UGC</title>
+<meta name="description" content="Portfolio de Lucy Fetter, créatrice UGC à Strasbourg : contenu vertical pour les marques de sport, nutrition et bien-être, en français et en allemand.">
+<meta name="theme-color" content="#6f5238">
+<meta property="og:title" content="Lucy Fetter — Créatrice UGC">
+<meta property="og:description" content="Contenu vertical pour les marques de sport, nutrition et bien-être. Français / allemand.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="media/p-accueil.jpg">
+<link rel="icon" href="media/p-accueil.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Karla:wght@400;500;600;700&display=swap">
+<style>
+/* ---- jetons du systeme ---- */
+:root {
+  --surface-000: #fbf8f4;
+  --surface-100: #f1e6d8;
+  --surface-200: #eadfd2;
+  --surface-300: #e8dac6;
+  --accent-doux: #f3e3d2;
+  --argile: #b5784f;
+  --argile-fort: #8a5535;
+  --ligne: #ded0bf;
+  --ligne-forte: #9a8a76;
+  --ink: #2f2721;
+  --ink-muted: #6b5b4d;
+  --accent: #9c7551;
+  --accent-fort: #6f5238;
+  --on-accent: #fdfbf8;
+  --focus: #6f5238;
+  --shadow-douce: 0 1px 2px rgba(47,39,33,0.05), 0 8px 24px rgba(47,39,33,0.06);
+  --shadow-levee: 0 2px 4px rgba(47,39,33,0.06), 0 18px 40px rgba(47,39,33,0.10);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --font-titre: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-texte: "Karla", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface-000: #17130f;
+    --surface-100: #241d17;
+    --surface-200: #2c241d;
+    --surface-300: #3a2f25;
+    --accent-doux: #2e241b;
+    --argile: #e0a67a;
+    --argile-fort: #edc4a3;
+    --ligne: #3a3028;
+    --ligne-forte: #7d6c5b;
+    --ink: #f3eae0;
+    --ink-muted: #b9a794;
+    --accent: #d2a679;
+    --accent-fort: #e4be97;
+    --on-accent: #1e1712;
+    --focus: #e4be97;
+    --shadow-douce: 0 1px 2px rgba(0,0,0,0.45), 0 8px 24px rgba(0,0,0,0.35);
+    --shadow-levee: 0 2px 4px rgba(0,0,0,0.5), 0 18px 40px rgba(0,0,0,0.45);
+  }
+}
+
+/* ---- composants ---- */
+/* ---- base ------------------------------------------------------------ */
+
+.lf-root,
+.lf-page {
+  background: var(--surface-000);
+  color: var(--ink);
+  font-family: var(--font-texte);
+  -webkit-font-smoothing: antialiased;
+}
+
+.lf-shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-inline: var(--space-8);
+}
+
+.lf-section {
+  padding-block: var(--space-9);
+}
+
+.lf-section--tinted { background: var(--accent-doux); }
+.lf-section--sable { background: var(--surface-100); }
+.lf-section--chaud { background: var(--surface-300); }
+
+/* ---- bandeau pleine couleur (une seule fois par page) ------------------ */
+
+.lf-section--fort { background: var(--accent-fort); color: var(--on-accent); }
+
+.lf-section--fort .lf-display-l,
+.lf-section--fort .lf-display-xl,
+.lf-section--fort .lf-titre-section,
+.lf-section--fort .lf-titre-carte { color: var(--on-accent); }
+
+.lf-section--fort .lf-eyebrow { color: var(--surface-000); }
+.lf-section--fort .lf-titre-duo__serif { color: var(--surface-200); }
+.lf-section--fort .lf-intro,
+.lf-section--fort .lf-corps,
+.lf-section--fort .lf-corps-s,
+.lf-section--fort .lf-legende,
+.lf-section--fort .lf-muted { color: var(--surface-200); }
+
+.lf-section--fort .lf-contact__lien { color: var(--surface-000); }
+
+.lf-section--fort .lf-btn--primaire {
+  background: var(--surface-000);
+  color: var(--accent-fort);
+}
+
+.lf-section--fort .lf-btn--primaire:hover { background: var(--surface-200); }
+
+.lf-section--fort *:focus-visible { outline-color: var(--surface-000); }
+
+/* ---- apparition au défilement ------------------------------------------ */
+
+.lf-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 640ms cubic-bezier(.2,.7,.3,1),
+              transform 640ms cubic-bezier(.2,.7,.3,1);
+  will-change: opacity, transform;
+}
+
+.lf-reveal.is-in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .lf-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+.lf-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.lf-measure {
+  max-width: 62ch;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+/* ---- type helpers ---------------------------------------------------- */
+
+.lf-eyebrow {
+  font-family: var(--font-texte);
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+}
+
+.lf-eyebrow--argile { color: var(--argile-fort); }
+
+.lf-titre-duo__serif--argile { color: var(--argile); }
+
+.lf-display-xl {
+  font-family: var(--font-titre);
+  font-size: 56px;
+  line-height: 56px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.lf-display-l {
+  font-family: var(--font-titre);
+  font-size: 40px;
+  line-height: 44px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.lf-titre-section {
+  font-family: var(--font-titre);
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.lf-titre-carte {
+  font-family: var(--font-titre);
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  margin: 0;
+}
+
+.lf-titre-duo { display: flex; flex-direction: column; }
+
+.lf-titre-duo__serif {
+  margin: -10px 0 0 var(--space-6);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.1;
+  color: var(--accent);
+}
+
+.lf-intro {
+  font-size: 19px;
+  line-height: 30px;
+  margin: 0;
+}
+
+.lf-corps {
+  font-size: 16px;
+  line-height: 27px;
+  margin: 0;
+}
+
+.lf-corps-s {
+  font-size: 14px;
+  line-height: 22px;
+  margin: 0;
+}
+
+.lf-legende {
+  font-size: 13px;
+  line-height: 18px;
+  margin: 0;
+  color: var(--ink-muted);
+}
+
+.lf-muted {
+  color: var(--ink-muted);
+}
+
+.lf-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  margin-left: 6px;
+  vertical-align: 0.42em;
+}
+
+/* ---- boutons --------------------------------------------------------- */
+
+.lf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  padding: 14px var(--space-5);
+  font-family: var(--font-texte);
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 180ms cubic-bezier(.2,.7,.3,1),
+              border-color 180ms cubic-bezier(.2,.7,.3,1),
+              color 180ms cubic-bezier(.2,.7,.3,1);
+}
+
+.lf-btn__arrow {
+  transition: transform 180ms cubic-bezier(.2,.7,.3,1);
+  flex: none;
+}
+
+.lf-btn:hover .lf-btn__arrow { transform: translateX(3px); }
+
+.lf-btn--primaire {
+  background: var(--accent-fort);
+  color: var(--on-accent);
+}
+
+.lf-btn--primaire:hover { background: var(--ink); }
+
+.lf-btn--secondaire {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ligne-forte);
+}
+
+.lf-btn--secondaire:hover {
+  background: var(--surface-100);
+  border-color: var(--ink);
+}
+
+.lf-btn--lien {
+  padding: 0;
+  border-radius: var(--radius-xs);
+  background: none;
+  color: var(--accent-fort);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+
+/* ---- navigation ------------------------------------------------------ */
+
+.lf-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--surface-100);
+  border-bottom: 1px solid var(--ligne);
+  box-shadow: var(--shadow-douce);
+}
+
+.lf-nav__inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-8);
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.lf-lang {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: var(--space-4);
+}
+
+.lf-lang__btn {
+  border: none;
+  background: none;
+  font-family: var(--font-texte);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  cursor: pointer;
+  padding: 5px 7px;
+  border-radius: var(--radius-xs);
+  transition: color 180ms cubic-bezier(.2,.7,.3,1),
+              background-color 180ms cubic-bezier(.2,.7,.3,1);
+}
+
+.lf-lang__btn:hover { color: var(--ink); }
+
+.lf-lang__btn[aria-pressed="true"] {
+  color: var(--ink);
+  background: var(--surface-300);
+}
+
+.lf-lang__sep { color: var(--ligne-forte); font-size: 13px; }
+
+.lf-nav__marque {
+  font-family: var(--font-titre);
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.lf-nav__liens {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lf-nav__lien {
+  position: relative;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  text-decoration: none;
+  padding-block: var(--space-1);
+}
+
+.lf-nav__lien::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1.5px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms cubic-bezier(.2,.7,.3,1);
+}
+
+.lf-nav__lien:hover::after,
+.lf-nav__lien[aria-current="page"]::after { transform: scaleX(1); }
+
+/* ---- accueil --------------------------------------------------------- */
+
+.lf-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: var(--space-8);
+  align-items: center;
+  padding-block: var(--space-10);
+}
+
+.lf-hero__texte { display: flex; flex-direction: column; gap: var(--space-5); }
+
+.lf-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--ink-muted);
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.lf-hero__meta span::after {
+  content: "·";
+  margin-left: var(--space-3);
+  color: var(--ligne-forte);
+}
+
+.lf-hero__meta span:last-child::after { content: none; }
+
+.lf-hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+
+.lf-hero__portrait {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface-200);
+  border: 1px solid var(--ligne);
+}
+
+.lf-hero__portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ---- grilles --------------------------------------------------------- */
+
+.lf-grid { display: grid; gap: var(--space-4); }
+.lf-grid--videos { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.lf-grid--photos { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.lf-grid--deux { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); }
+
+@media (max-width: 1100px) {
+  .lf-grid--videos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lf-grid--photos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 900px) {
+  .lf-shell, .lf-nav__inner { padding-inline: var(--space-5); }
+  .lf-hero { grid-template-columns: minmax(0, 1fr); padding-block: var(--space-9); }
+  .lf-grid--videos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lf-grid--photos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lf-display-xl { font-size: 40px; line-height: 42px; }
+  .lf-display-l { font-size: 30px; line-height: 34px; }
+}
+
+@media (max-width: 600px) {
+  .lf-grid--videos, .lf-grid--photos, .lf-grid--deux { grid-template-columns: minmax(0, 1fr); }
+  .lf-nav__liens { gap: var(--space-4); }
+}
+
+/* ---- cartes média ---------------------------------------------------- */
+
+.lf-carte { display: flex; flex-direction: column; gap: var(--space-5); }
+
+.lf-carte__media {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--ligne);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface-200);
+  cursor: pointer;
+  transition: transform 260ms cubic-bezier(.2,.7,.3,1),
+              box-shadow 260ms cubic-bezier(.2,.7,.3,1);
+}
+
+.lf-carte__media--video { aspect-ratio: 9 / 16; }
+
+.lf-carte__media--tel {
+  border: 7px solid var(--ink);
+  border-radius: 28px;
+  box-shadow: var(--shadow-douce);
+}
+
+.lf-carte__media--tel::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36%;
+  height: 5px;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  z-index: 2;
+}
+.lf-carte__media--photo { aspect-ratio: 4 / 5; cursor: default; }
+
+.lf-carte__media img,
+.lf-carte__media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 260ms cubic-bezier(.2,.7,.3,1);
+}
+
+.lf-carte:hover .lf-carte__media {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-levee);
+}
+
+.lf-carte:hover .lf-carte__media img { transform: scale(1.03); }
+
+.lf-carte__vide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  color: var(--ink-muted);
+  text-align: center;
+  padding: var(--space-4);
+}
+
+.lf-carte__play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-000);
+  color: var(--accent-fort);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--ligne-forte);
+  transition: transform 180ms cubic-bezier(.2,.7,.3,1);
+  pointer-events: none;
+}
+
+.lf-carte:hover .lf-carte__play { transform: translate(-50%, -50%) scale(1.06); }
+
+.lf-carte__pied { display: flex; flex-direction: column; gap: var(--space-1); }
+
+.lf-carte__marque {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink-muted);
+  margin: 0;
+}
+
+/* ---- étiquettes et listes -------------------------------------------- */
+
+.lf-tags { display: flex; flex-wrap: wrap; gap: var(--space-3); list-style: none; margin: 0; padding: 0; }
+
+.lf-tag {
+  display: inline-block;
+  padding: 8px var(--space-4);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--ligne);
+  background: var(--surface-000);
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.lf-specs {
+  border: 1px solid var(--ligne);
+  border-radius: var(--radius-lg);
+  background: var(--surface-100);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.lf-specs__liste { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+
+.lf-specs__item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--ink-muted);
+}
+
+.lf-specs__item::before {
+  content: "";
+  flex: none;
+  width: 14px;
+  height: 1.5px;
+  background: var(--accent);
+  transform: translateY(-4px);
+}
+
+/* ---- étapes ---------------------------------------------------------- */
+
+.lf-etapes {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-5);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lf-etape {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-top: var(--space-4);
+  border-top: 2px solid var(--accent);
+}
+
+.lf-etape__num {
+  font-family: var(--font-texte);
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--accent-fort);
+  margin: 0;
+}
+
+@media (max-width: 900px) { .lf-etapes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .lf-etapes { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---- contact --------------------------------------------------------- */
+
+.lf-contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  align-items: flex-start;
+  max-width: 62ch;
+}
+
+.lf-contact__liens { display: flex; flex-wrap: wrap; gap: var(--space-5); list-style: none; margin: 0; padding: 0; }
+
+.lf-contact__lien {
+  color: var(--accent-fort);
+  font-size: 16px;
+  line-height: 27px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ---- mouvement réduit ------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  .lf-btn, .lf-btn__arrow, .lf-carte__media, .lf-carte__media img,
+  .lf-carte__play, .lf-nav__lien::after {
+    transition: none !important;
+  }
+  .lf-carte:hover .lf-carte__media { transform: none; }
+  .lf-carte:hover .lf-carte__media img { transform: none; }
+  .lf-carte:hover .lf-carte__play { transform: translate(-50%, -50%); }
+  .lf-nav__lien:hover::after { transform: scaleX(1); }
+}
+
+/* ---- page ---- */
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--surface-000); }
+
+  
+  .lf-sep { border: none; border-top: 1px solid var(--ligne); margin: 0; }
+  .lf-pied {
+    padding-block: var(--space-7);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .lf-apropos { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: var(--space-8); align-items: start; }
+  @media (max-width: 900px) { .lf-apropos { grid-template-columns: minmax(0, 1fr); } }
+
+</style>
+</head>
+<body>
+<div id="page" class="lf-page"></div>
+<script>
+/* @ds-bundle: {"format":4,"namespace":"LucyUGC","components":[{"name":"Nav"},{"name":"Hero"},{"name":"Button"},{"name":"SectionHead"},{"name":"VideoCard"},{"name":"PhotoCard"},{"name":"Tag"},{"name":"SpecList"},{"name":"Process"},{"name":"ContactBlock"}]} */
+(function () {
+  "use strict";
+
+  var SVG = "http://www.w3.org/2000/svg";
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function svg(w, h, d, fill) {
+    var s = document.createElementNS(SVG, "svg");
+    s.setAttribute("viewBox", "0 0 " + w + " " + h);
+    s.setAttribute("width", w);
+    s.setAttribute("height", h);
+    s.setAttribute("aria-hidden", "true");
+    s.setAttribute("focusable", "false");
+    var p = document.createElementNS(SVG, "path");
+    p.setAttribute("d", d);
+    if (fill === "stroke") {
+      p.setAttribute("fill", "none");
+      p.setAttribute("stroke", "currentColor");
+      p.setAttribute("stroke-width", "1.6");
+      p.setAttribute("stroke-linecap", "round");
+      p.setAttribute("stroke-linejoin", "round");
+    } else {
+      p.setAttribute("fill", "currentColor");
+    }
+    s.appendChild(p);
+    return s;
+  }
+
+  function arrow() {
+    var s = svg(16, 16, "M2.5 8h11M9.5 4l4 4-4 4", "stroke");
+    s.setAttribute("class", "lf-btn__arrow");
+    return s;
+  }
+
+  function playGlyph() {
+    return svg(18, 18, "M5 3.4v11.2L15 9z", "fill");
+  }
+
+  /* ---- Button -------------------------------------------------------- */
+
+  function Button(props) {
+    var p = props || {};
+    var variante = p.variante || "primaire";
+    var tag = p.href ? "a" : "button";
+    var n = el(tag, "lf-btn lf-btn--" + variante);
+    if (p.href) n.href = p.href;
+    else n.type = p.type || "button";
+    n.appendChild(document.createTextNode(p.label || "Bouton"));
+    if (p.fleche !== false && variante !== "lien") n.appendChild(arrow());
+    if (p.onClick) n.addEventListener("click", p.onClick);
+    return n;
+  }
+
+  /* ---- Nav ----------------------------------------------------------- */
+
+  function Nav(props) {
+    var p = props || {};
+    var nav = el("nav", "lf-nav");
+    nav.setAttribute("aria-label", "Navigation principale");
+    var inner = el("div", "lf-nav__inner");
+
+    var marque = el("a", "lf-nav__marque");
+    marque.href = p.accueil || "#accueil";
+    marque.appendChild(document.createTextNode(p.marque || "Lucy Fetter"));
+    var dot = el("span", "lf-dot");
+    dot.setAttribute("aria-hidden", "true");
+    marque.appendChild(dot);
+    inner.appendChild(marque);
+
+    var ul = el("ul", "lf-nav__liens");
+    (p.liens || []).forEach(function (lien) {
+      var li = el("li");
+      var a = el("a", "lf-nav__lien", lien.label);
+      a.href = lien.href || "#";
+      if (lien.actif) a.setAttribute("aria-current", "page");
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+    inner.appendChild(ul);
+
+    if (p.langue) {
+      var box = el("div", "lf-lang");
+      box.setAttribute("role", "group");
+      box.setAttribute("aria-label", p.langue.label || "Langue");
+      (p.langue.options || []).forEach(function (opt, i) {
+        if (i) box.appendChild(el("span", "lf-lang__sep", "/"));
+        var b = el("button", "lf-lang__btn", opt.code.toUpperCase());
+        b.type = "button";
+        b.lang = opt.code;
+        b.setAttribute("aria-pressed", opt.code === p.langue.actuelle ? "true" : "false");
+        if (opt.titre) b.title = opt.titre;
+        b.addEventListener("click", function () {
+          if (p.langue.onChange) p.langue.onChange(opt.code);
+        });
+        box.appendChild(b);
+      });
+      inner.appendChild(box);
+    }
+
+    if (p.cta) inner.appendChild(Button({ label: p.cta.label, href: p.cta.href, variante: "primaire" }));
+
+    nav.appendChild(inner);
+    return nav;
+  }
+
+  /* ---- SectionHead --------------------------------------------------- */
+
+  function SectionHead(props) {
+    var p = props || {};
+    var n = el("header", "lf-stack");
+    var arg = p.ton === "argile";
+    if (p.surtitre) n.appendChild(el("p", "lf-eyebrow" + (arg ? " lf-eyebrow--argile" : ""), p.surtitre));
+    var classeTitre = p.taille === "section" ? "lf-titre-section" : "lf-display-l";
+    if (p.serif) {
+      var duo = el("div", "lf-titre-duo");
+      duo.appendChild(el("h2", classeTitre, p.titre || ""));
+      duo.appendChild(el("p", "lf-titre-duo__serif" + (arg ? " lf-titre-duo__serif--argile" : ""), p.serif));
+      n.appendChild(duo);
+    } else {
+      n.appendChild(el("h2", classeTitre, p.titre || ""));
+    }
+    if (p.lead) n.appendChild(el("p", "lf-intro lf-muted lf-measure", p.lead));
+    return n;
+  }
+
+  /* ---- Hero ---------------------------------------------------------- */
+
+  function Hero(props) {
+    var p = props || {};
+    var n = el("section", "lf-hero");
+    n.id = p.id || "accueil";
+
+    var texte = el("div", "lf-hero__texte");
+    if (p.surtitre) texte.appendChild(el("p", "lf-eyebrow", p.surtitre));
+
+    var h1 = el("h1", "lf-display-xl", p.nom || "Lucy Fetter");
+    var dot = el("span", "lf-dot");
+    dot.setAttribute("aria-hidden", "true");
+    h1.appendChild(dot);
+    texte.appendChild(h1);
+
+    if (p.meta && p.meta.length) {
+      var meta = el("p", "lf-hero__meta");
+      p.meta.forEach(function (m) { meta.appendChild(el("span", null, m)); });
+      texte.appendChild(meta);
+    }
+    if (p.texte) texte.appendChild(el("p", "lf-intro lf-measure", p.texte));
+
+    if (p.actions && p.actions.length) {
+      var actions = el("div", "lf-hero__actions");
+      p.actions.forEach(function (a) { actions.appendChild(Button(a)); });
+      texte.appendChild(actions);
+    }
+    n.appendChild(texte);
+
+    var portrait = el("div", "lf-hero__portrait");
+    if (p.portrait) {
+      var img = el("img");
+      img.src = p.portrait;
+      img.alt = p.portraitAlt || "";
+      portrait.appendChild(img);
+    } else {
+      var vide = el("div", "lf-carte__vide");
+      vide.appendChild(el("p", "lf-legende", "Portrait 4:5"));
+      portrait.appendChild(vide);
+    }
+    n.appendChild(portrait);
+    return n;
+  }
+
+  /* ---- une seule vidéo à la fois --------------------------------------- */
+
+  var lecteurs = [];
+
+  function enregistrerLecteur(v) {
+    lecteurs.push(v);
+    v.addEventListener("play", function () {
+      lecteurs = lecteurs.filter(function (autre) {
+        return autre === v || autre.isConnected !== false;
+      });
+      lecteurs.forEach(function (autre) {
+        if (autre !== v && !autre.paused) autre.pause();
+      });
+    });
+  }
+
+  /* ---- cartes média --------------------------------------------------- */
+
+  function pied(p) {
+    var f = el("div", "lf-carte__pied");
+    if (p.marque) f.appendChild(el("p", "lf-carte__marque", p.marque));
+    else if (p.contexte) f.appendChild(el("p", "lf-carte__marque", p.contexte));
+    if (p.legende) f.appendChild(el("p", "lf-legende", p.legende));
+    return f;
+  }
+
+  function VideoCard(props) {
+    var p = props || {};
+    var n = el("figure", "lf-carte");
+    n.style.margin = "0";
+
+    var classes = "lf-carte__media lf-carte__media--video";
+    if (p.cadre === "telephone") classes += " lf-carte__media--tel";
+    var media = el(p.src ? "button" : "div", classes);
+    if (p.src) {
+      media.type = "button";
+      media.setAttribute("aria-label", "Lire la vidéo" + (p.marque || p.contexte ? " — " + (p.marque || p.contexte) : ""));
+      var v = el("video");
+      v.src = p.src;
+      if (p.poster) v.poster = p.poster;
+      v.preload = "metadata";
+      v.playsInline = true;
+      v.muted = true;
+      v.controls = false;
+      enregistrerLecteur(v);
+      media.appendChild(v);
+      var play = el("span", "lf-carte__play");
+      play.appendChild(playGlyph());
+      media.appendChild(play);
+      media.addEventListener("click", function () {
+        v.controls = true;
+        play.style.display = "none";
+        media.style.cursor = "default";
+        if (v.play) v.play();
+      });
+    } else {
+      var vide = el("div", "lf-carte__vide");
+      vide.appendChild(el("p", "lf-legende", p.placeholder || "Vidéo 9:16"));
+      vide.appendChild(el("p", "lf-legende", "à déposer"));
+      media.appendChild(vide);
+      var play2 = el("span", "lf-carte__play");
+      play2.appendChild(playGlyph());
+      media.appendChild(play2);
+    }
+
+    n.appendChild(media);
+    n.appendChild(pied(p));
+    return n;
+  }
+
+  function PhotoCard(props) {
+    var p = props || {};
+    var n = el("figure", "lf-carte");
+    n.style.margin = "0";
+    var media = el("div", "lf-carte__media lf-carte__media--photo");
+    if (p.src) {
+      var img = el("img");
+      img.src = p.src;
+      img.alt = p.alt || "";
+      media.appendChild(img);
+    } else {
+      var vide = el("div", "lf-carte__vide");
+      vide.appendChild(el("p", "lf-legende", p.placeholder || "Photo 4:5"));
+      vide.appendChild(el("p", "lf-legende", "à déposer"));
+      media.appendChild(vide);
+    }
+    n.appendChild(media);
+    n.appendChild(pied(p));
+    return n;
+  }
+
+  /* ---- étiquettes et specs -------------------------------------------- */
+
+  function Tag(props) {
+    var p = typeof props === "string" ? { label: props } : (props || {});
+    return el("li", "lf-tag", p.label || "");
+  }
+
+  function TagList(labels) {
+    var ul = el("ul", "lf-tags");
+    (labels || []).forEach(function (l) { ul.appendChild(Tag(l)); });
+    return ul;
+  }
+
+  function SpecList(props) {
+    var p = props || {};
+    var n = el("div", "lf-specs");
+    if (p.titre) n.appendChild(el("h3", "lf-titre-carte", p.titre));
+    var ul = el("ul", "lf-specs__liste");
+    (p.items || []).forEach(function (i) { ul.appendChild(el("li", "lf-specs__item", i)); });
+    n.appendChild(ul);
+    return n;
+  }
+
+  /* ---- étapes --------------------------------------------------------- */
+
+  function Process(props) {
+    var p = props || {};
+    var ul = el("ol", "lf-etapes");
+    (p.etapes || []).forEach(function (e, i) {
+      var li = el("li", "lf-etape");
+      if (i % 2) {
+        li.style.borderTopColor = "var(--argile)";
+      }
+      var num = el("p", "lf-etape__num", "0" + (i + 1));
+      if (i % 2) num.style.color = "var(--argile-fort)";
+      li.appendChild(num);
+      li.appendChild(el("h3", "lf-titre-carte", e.titre || ""));
+      if (e.texte) li.appendChild(el("p", "lf-corps-s lf-muted", e.texte));
+      ul.appendChild(li);
+    });
+    return ul;
+  }
+
+  /* ---- contact -------------------------------------------------------- */
+
+  function ContactBlock(props) {
+    var p = props || {};
+    var n = el("div", "lf-contact");
+    if (p.surtitre) n.appendChild(el("p", "lf-eyebrow", p.surtitre));
+    if (p.serif) {
+      var duo = el("div", "lf-titre-duo");
+      duo.appendChild(el("h2", "lf-display-l", p.titre || "Contactez-moi"));
+      duo.appendChild(el("p", "lf-titre-duo__serif", p.serif));
+      n.appendChild(duo);
+    } else {
+      n.appendChild(el("h2", "lf-display-l", p.titre || "Contactez-moi"));
+    }
+    if (p.texte) n.appendChild(el("p", "lf-intro lf-muted", p.texte));
+    if (p.liens && p.liens.length) {
+      var ul = el("ul", "lf-contact__liens");
+      p.liens.forEach(function (l) {
+        var li = el("li");
+        var a = el("a", "lf-contact__lien", l.label);
+        a.href = l.href || "#";
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      n.appendChild(ul);
+    }
+    if (p.cta) n.appendChild(Button(p.cta));
+    return n;
+  }
+
+  /* ---- apparition au défilement ---------------------------------------- */
+
+  function observeReveals(racine, pas) {
+    var root = racine || document;
+    var cibles = [].slice.call(root.querySelectorAll(".lf-reveal"));
+    if (!cibles.length) return;
+
+    var reduit = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduit || !("IntersectionObserver" in window)) {
+      cibles.forEach(function (c) { c.classList.add("is-in"); });
+      return;
+    }
+
+    var ecart = typeof pas === "number" ? pas : 70;
+    var obs = new IntersectionObserver(function (entrees) {
+      var rang = 0;
+      entrees.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var cible = e.target;
+        cible.style.transitionDelay = (rang * ecart) + "ms";
+        rang += 1;
+        montrer(cible);
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+
+    function montrer(cible) {
+      cible.classList.add("is-in");
+      obs.unobserve(cible);
+    }
+
+    // Un saut d'ancre ou un défilement très rapide peut faire passer un bloc
+    // d'« sous l'écran » à « au-dessus » entre deux observations : l'observateur
+    // ne le voit jamais et il resterait invisible. On rattrape ceux-là.
+    function rattraper() {
+      cibles.forEach(function (c) {
+        if (c.classList.contains("is-in")) return;
+        if (c.getBoundingClientRect().bottom <= 0) {
+          c.style.transitionDelay = "0ms";
+          montrer(c);
+        }
+      });
+    }
+
+    var enAttente = false;
+    function auDefilement() {
+      if (enAttente) return;
+      enAttente = true;
+      window.requestAnimationFrame(function () { enAttente = false; rattraper(); });
+    }
+
+    cibles.forEach(function (c) { obs.observe(c); });
+    window.addEventListener("scroll", auDefilement, { passive: true });
+    window.addEventListener("resize", auDefilement);
+    return obs;
+  }
+
+  window.LucyUGC = {
+    Button: Button,
+    observeReveals: observeReveals,
+    Nav: Nav,
+    Hero: Hero,
+    SectionHead: SectionHead,
+    VideoCard: VideoCard,
+    PhotoCard: PhotoCard,
+    Tag: Tag,
+    TagList: TagList,
+    SpecList: SpecList,
+    Process: Process,
+    ContactBlock: ContactBlock
+  };
+})();
+
+</script>
+<script>
+
+  var L = window.LucyUGC;
+  var MEDIA = {
+    portrait: "media/p-accueil.jpg",
+    salle:    "media/photo-salle.jpg",
+    sachets:  "media/p-selfie-produit.jpg",
+    loly:     "media/photo-loly-set.jpg",
+    cheveux:  "media/p-cheveux.jpg",
+    resto:    "media/p-resto.jpg",
+    duo:      "media/p-duo.jpg",
+    voyage:   "media/p-voyage.jpg",
+    marrakech:"media/p-marrakech.jpg",
+    chats:    "media/p-chats.jpg",
+    vBulk:    "media/bulk.mp4",
+    vTeveo:   "media/teveo.mp4",
+    vPino:    "media/pinofit.mp4",
+    vLoly:    "media/secrets-de-loly.mp4",
+    vPurina:  "media/purina-one.mp4",
+    aBulk:    "media/bulk.jpg",
+    aTeveo:   "media/teveo.jpg",
+    aPino:    "media/pinofit.jpg",
+    aLoly:    "media/secrets-de-loly.jpg",
+    aPurina:  "media/purina-one.jpg"
+  };
+
+  var T = {
+    fr: {
+      nav: ["Accueil", "Qui suis-je", "Mes vidéos", "Mes photos", "Services"],
+      contact: "Contact",
+      langueLabel: "Langue du site",
+      heroSurtitre: "Créatrice UGC",
+      meta: ["Kinésithérapeute", "28 ans", "Strasbourg", "FR / DE"],
+      heroTexte: "Je crée du contenu vertical pour les marques de sport, de nutrition et de bien-être. Force athlétique, alimentation saine, équipement du quotidien : je filme ce que je pratique.",
+      ctaPrincipal: "Collaborons ensemble",
+      ctaVideos: "Voir mes vidéos",
+      portraitAlt: "Lucy Fetter en robe claire au bord de la mer, en fin de journée",
+      aproposSur: "À propos",
+      aproposTitre: "Qui suis-je ?",
+      aproposTexte: "Kinésithérapeute en Allemagne et pratiquante de force athlétique, je m'entraîne cinq fois par semaine. Je filme ce que j'utilise vraiment — compléments, matériel d'entraînement, équipement du quotidien — et, à côté, ma routine cheveux bouclés et mes deux chats.",
+      aproposAlt: "Lucy en tenue de sport dans une salle de musculation",
+      couvreTitre: "Ce que je couvre",
+      couvre: ["Fitness et force athlétique", "Nutrition et compléments", "Lifestyle et bien-être", "Beauté — cheveux bouclés", "Voyage", "Contenu animalier (chat)"],
+      portfolioSur: "Portfolio",
+      videosTitre: "Mes vidéos",
+      videosSerif: "créations UGC",
+      videosLead: "Cinq créations personnelles, tournées et montées par mes soins avec des produits que j'utilise. Cliquez pour lancer la lecture — rien ne démarre tout seul.",
+      videos: [
+        "Bulk · démonstration produit · voix in · 23 s",
+        "Teveo · legging · voix in · 23 s",
+        "Pinofit · rouleau de massage · voix in · 24 s",
+        "Les Secrets de Loly · routine cheveux · 23 s",
+        "Purina One · contenu animalier · 22 s"
+      ],
+      perso: "Création personnelle",
+      photosTitre: "Mes photos",
+      photosSerif: "photos et univers",
+      photosLead: "Format 4:5, lumière naturelle, fichiers haute définition. Trois types de prise de vue — et les univers dans lesquels je sais poser un produit.",
+      photoTags: ["Selfie avec le produit", "Produit seul", "Photo esthétique"],
+      photos: [
+        ["Selfie avec le produit · gamme Bulk", "Lucy tenant en éventail trois sachets Bulk — whey, collagène et créatine — face caméra"],
+        ["Produit seul · gamme soin capillaire", "Flacons et pots de soins capillaires alignés sur une table en bois"],
+        ["Beauté · cheveux bouclés", "Lucy en gros plan, cheveux bouclés détachés, en lumière du jour"],
+        ["Photo esthétique · assiette en terrasse", "Assiette de pâtes au thon et pistache en gros plan, terrasse en arrière-plan flou"],
+        ["Duo · contenu à deux", "Lucy et son compagnon sur un toit-terrasse, ville en arrière-plan"],
+        ["Voyage · Pouilles", "Ruelle de maisons blanches à toits coniques, fleurs roses au premier plan"],
+        ["Voyage · Marrakech", "Lucy de dos au centre du patio arboré d'un riad"],
+        ["Animalier · mes chats", "Deux chats noir et blanc blottis l'un contre l'autre"]
+      ],
+      servicesSur: "Services",
+      servicesTitre: "Ce que je propose",
+      servicesSerif: "du concept au fichier",
+      servicesLead: "Je prends la création de bout en bout — l'angle, le script, le tournage, le montage — en français ou en allemand.",
+      prestationsTitre: "Prestations",
+      prestations: ["Concept et script (français / allemand)", "Stratégie créative", "Témoignages et avis", "Démonstration de produits", "Unboxing et haul"],
+      universTitre: "Univers que je couvre",
+      univers: ["Fitness, force athlétique, nutrition", "Bien-être et récupération", "Lifestyle et beauté (cheveux bouclés)", "Voyage", "Contenu animalier (chat)"],
+      livreTitre: "Ce que je livre",
+      videosSpecTitre: "Vidéos",
+      videosSpec: ["10 à 60 secondes", "Format vertical 9:16", "Voix in, voix off ou facecam", "Français ou allemand"],
+      photosSpecTitre: "Photos",
+      photosSpec: ["Selfie avec le produit", "Produit seul", "Photo esthétique", "Format 4:5, haute définition"],
+      methodeSur: "Méthode",
+      methodeTitre: "Comment ça se passe",
+      methodeLead: "Quatre étapes, du produit reçu au fichier livré.",
+      etapes: [
+        ["Brief", "Vous m'envoyez le produit, vos intentions et vos contraintes de marque."],
+        ["Concept et script", "Je propose un angle et un script, en français ou en allemand, avant tout tournage."],
+        ["Tournage", "Je filme chez moi ou en salle, en lumière naturelle, format vertical."],
+        ["Livraison", "Fichiers bruts ou montés, 9:16, avec une série de retouches incluse."]
+      ],
+      contactTitre: "Travaillons ensemble",
+      contactSerif: "j'ai hâte de voir votre produit",
+      contactTexte: "Deux lignes sur votre produit, et je vous réponds avec une idée de vidéo. Français ou allemand.",
+      contactCta: "M'écrire",
+      pied: "Créatrice UGC · Strasbourg · FR / DE"
+    },
+    de: {
+      nav: ["Start", "Über mich", "Meine Videos", "Meine Fotos", "Leistungen"],
+      contact: "Kontakt",
+      langueLabel: "Sprache der Seite",
+      heroSurtitre: "UGC-Creatorin",
+      meta: ["Physiotherapeutin", "28 Jahre", "Straßburg", "FR / DE"],
+      heroTexte: "Ich erstelle vertikale Inhalte für Marken aus Sport, Ernährung und Wellness. Kraftsport, gesunde Ernährung, Alltagsausrüstung: Ich filme, was ich selbst lebe.",
+      ctaPrincipal: "Lassen Sie uns zusammenarbeiten",
+      ctaVideos: "Meine Videos ansehen",
+      portraitAlt: "Lucy Fetter in hellem Kleid am Meer, am späten Nachmittag",
+      aproposSur: "Über mich",
+      aproposTitre: "Wer ich bin",
+      aproposTexte: "Ich bin Physiotherapeutin in Deutschland und trainiere fünfmal pro Woche Kraftsport. Ich filme, was ich wirklich benutze — Supplements, Trainingsgeräte, Alltagsausrüstung — und daneben meine Lockenroutine und meine zwei Katzen.",
+      aproposAlt: "Lucy in Sportkleidung in einem Fitnessstudio",
+      couvreTitre: "Meine Themen",
+      couvre: ["Fitness und Kraftsport", "Ernährung und Supplements", "Lifestyle und Wohlbefinden", "Beauty — lockiges Haar", "Reisen", "Tier-Content (Katze)"],
+      portfolioSur: "Portfolio",
+      videosTitre: "Meine Videos",
+      videosSerif: "UGC-Kreationen",
+      videosLead: "Fünf eigene Produktionen, von mir gedreht und geschnitten, mit Produkten, die ich selbst benutze. Zum Abspielen klicken — nichts startet von allein.",
+      videos: [
+        "Bulk · Produktdemo · Sprecherin im Bild · 23 s",
+        "Teveo · Leggings · Sprecherin im Bild · 23 s",
+        "Pinofit · Massagerolle · Sprecherin im Bild · 24 s",
+        "Les Secrets de Loly · Lockenroutine · 23 s",
+        "Purina One · Tier-Content · 22 s"
+      ],
+      perso: "Eigene Produktion",
+      photosTitre: "Meine Fotos",
+      photosSerif: "Fotos und Themenwelten",
+      photosLead: "Format 4:5, natürliches Licht, Dateien in hoher Auflösung. Drei Aufnahmearten — und die Welten, in denen ich ein Produkt in Szene setze.",
+      photoTags: ["Selfie mit Produkt", "Produkt allein", "Ästhetische Aufnahme"],
+      photos: [
+        ["Selfie mit Produkt · Bulk-Sortiment", "Lucy hält drei Bulk-Beutel aufgefächert in die Kamera — Whey, Kollagen und Kreatin"],
+        ["Produkt allein · Haarpflegeserie", "Flaschen und Tiegel einer Haarpflegeserie auf einem Holztisch"],
+        ["Beauty · lockiges Haar", "Lucy in Nahaufnahme, offene Locken, bei Tageslicht"],
+        ["Ästhetische Aufnahme · Teller auf der Terrasse", "Pasta mit Thunfisch und Pistazie in Nahaufnahme, Terrasse unscharf im Hintergrund"],
+        ["Duo · Content zu zweit", "Lucy und ihr Partner auf einer Dachterrasse, Stadt im Hintergrund"],
+        ["Reisen · Apulien", "Gasse mit weißen Häusern und Kegeldächern, rosa Blüten im Vordergrund"],
+        ["Reisen · Marrakesch", "Lucy von hinten im begrünten Innenhof eines Riads"],
+        ["Tier-Content · meine Katzen", "Zwei schwarz-weiße Katzen aneinandergekuschelt"]
+      ],
+      servicesSur: "Leistungen",
+      servicesTitre: "Was ich anbiete",
+      servicesSerif: "vom Konzept zur Datei",
+      servicesLead: "Ich übernehme die Produktion von Anfang bis Ende — Idee, Skript, Dreh, Schnitt — auf Deutsch oder Französisch.",
+      prestationsTitre: "Leistungen",
+      prestations: ["Konzept und Skript (Deutsch / Französisch)", "Kreativstrategie", "Testimonials und Bewertungen", "Produktdemonstration", "Unboxing und Haul"],
+      universTitre: "Themenwelten",
+      univers: ["Fitness, Kraftsport, Ernährung", "Wohlbefinden und Regeneration", "Lifestyle und Beauty (lockiges Haar)", "Reisen", "Tier-Content (Katze)"],
+      livreTitre: "Was ich liefere",
+      videosSpecTitre: "Videos",
+      videosSpec: ["10 bis 60 Sekunden", "Hochformat 9:16", "Sprecherin im Bild, Voice-over oder Facecam", "Deutsch oder Französisch"],
+      photosSpecTitre: "Fotos",
+      photosSpec: ["Selfie mit Produkt", "Produkt allein", "Ästhetische Aufnahme", "Format 4:5, hohe Auflösung"],
+      methodeSur: "Ablauf",
+      methodeTitre: "So läuft es ab",
+      methodeLead: "Vier Schritte, vom erhaltenen Produkt bis zur gelieferten Datei.",
+      etapes: [
+        ["Briefing", "Sie schicken mir das Produkt, Ihre Ziele und Ihre Markenvorgaben."],
+        ["Konzept und Skript", "Ich schlage einen Ansatz und ein Skript vor, auf Deutsch oder Französisch, vor jedem Dreh."],
+        ["Dreh", "Ich filme zu Hause oder im Studio, bei natürlichem Licht, im Hochformat."],
+        ["Lieferung", "Rohmaterial oder fertiger Schnitt, 9:16, eine Korrekturschleife inklusive."]
+      ],
+      contactTitre: "Arbeiten wir zusammen",
+      contactSerif: "ich freue mich auf Ihr Produkt",
+      contactTexte: "Zwei Zeilen zu Ihrem Produkt, und ich antworte mit einer Videoidee. Auf Deutsch oder Französisch.",
+      contactCta: "Schreiben Sie mir",
+      pied: "UGC-Creatorin · Straßburg · FR / DE"
+    }
+  };
+
+  var LIENS = [
+    { label: "fetter.lucy@gmail.com", href: "mailto:fetter.lucy@gmail.com" },
+    { label: "Instagram @lucy.ftr", href: "https://www.instagram.com/lucy.ftr/" },
+    { label: "TikTok @lucyfetter", href: "https://www.tiktok.com/@lucyfetter" }
+  ];
+
+  var page = document.getElementById("page");
+  var langue = "fr";
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function reveal(n) { n.classList.add("lf-reveal"); return n; }
+
+  function section(id, fond) {
+    var s = el("section", "lf-section" + (fond ? " lf-section--" + fond : ""));
+    if (id) s.id = id;
+    var shell = el("div", "lf-shell lf-stack");
+    shell.style.gap = "32px";
+    s.appendChild(shell);
+    return { section: s, shell: shell };
+  }
+
+  function rendre(lg) {
+    var t = T[lg];
+    page.textContent = "";
+    document.documentElement.lang = lg;
+
+    /* --- navigation --- */
+    var ancres = ["#accueil", "#apropos", "#videos", "#photos", "#services"];
+    page.appendChild(L.Nav({
+      marque: "Lucy Fetter",
+      liens: t.nav.map(function (label, i) {
+        return { label: label, href: ancres[i], actif: i === 0 };
+      }),
+      langue: {
+        actuelle: lg,
+        label: t.langueLabel,
+        options: [{ code: "fr", titre: "Français" }, { code: "de", titre: "Deutsch" }],
+        onChange: function (code) { if (code !== langue) { langue = code; rendre(code); } }
+      },
+      cta: { label: t.contact, href: "#contact" }
+    }));
+
+    /* --- accueil --- */
+    var accueil = el("div", "lf-shell");
+    accueil.appendChild(L.Hero({
+      surtitre: t.heroSurtitre,
+      nom: "Lucy Fetter",
+      meta: t.meta,
+      texte: t.heroTexte,
+      portrait: MEDIA.portrait,
+      portraitAlt: t.portraitAlt,
+      actions: [
+        { label: t.ctaPrincipal, href: "#contact" },
+        { label: t.ctaVideos, href: "#videos", variante: "secondaire" }
+      ]
+    }));
+    page.appendChild(accueil);
+
+    /* --- qui suis-je --- */
+    var ap = section("apropos", "sable");
+    ap.shell.appendChild(reveal(L.SectionHead({ surtitre: t.aproposSur, titre: t.aproposTitre, taille: "section", ton: "argile" })));
+    var bloc = reveal(el("div", "lf-apropos"));
+    var photo = el("div", "lf-hero__portrait");
+    var img = el("img");
+    img.src = MEDIA.salle;
+    img.alt = t.aproposAlt;
+    photo.appendChild(img);
+    bloc.appendChild(photo);
+    var droite = el("div", "lf-stack");
+    droite.appendChild(el("p", "lf-intro lf-measure", t.aproposTexte));
+    droite.appendChild(L.SpecList({ titre: t.couvreTitre, items: t.couvre }));
+    bloc.appendChild(droite);
+    ap.shell.appendChild(bloc);
+    page.appendChild(ap.section);
+
+    /* --- vidéos --- */
+    var vd = section("videos");
+    vd.shell.appendChild(reveal(L.SectionHead({ surtitre: t.portfolioSur, titre: t.videosTitre, serif: t.videosSerif, lead: t.videosLead })));
+    var gv = el("div", "lf-grid lf-grid--videos");
+    var srcs = [
+      [MEDIA.vBulk, MEDIA.aBulk], [MEDIA.vTeveo, MEDIA.aTeveo], [MEDIA.vPino, MEDIA.aPino],
+      [MEDIA.vLoly, MEDIA.aLoly], [MEDIA.vPurina, MEDIA.aPurina]
+    ];
+    t.videos.forEach(function (legende, i) {
+      gv.appendChild(reveal(L.VideoCard({
+        src: srcs[i][0], poster: srcs[i][1], cadre: "telephone",
+        contexte: t.perso, legende: legende
+      })));
+    });
+    vd.shell.appendChild(gv);
+    page.appendChild(vd.section);
+
+    /* --- photos --- */
+    var ph = section("photos", "tinted");
+    ph.shell.appendChild(reveal(L.SectionHead({ surtitre: t.portfolioSur, titre: t.photosTitre, serif: t.photosSerif, lead: t.photosLead, ton: "argile" })));
+    ph.shell.appendChild(reveal(L.TagList(t.photoTags)));
+    var gp = el("div", "lf-grid lf-grid--photos");
+    var imgs = [MEDIA.sachets, MEDIA.loly, MEDIA.cheveux, MEDIA.resto, MEDIA.duo, MEDIA.voyage, MEDIA.marrakech, MEDIA.chats];
+    t.photos.forEach(function (p, i) {
+      gp.appendChild(reveal(L.PhotoCard({ src: imgs[i], contexte: t.perso, legende: p[0], alt: p[1] })));
+    });
+    ph.shell.appendChild(gp);
+    page.appendChild(ph.section);
+
+    /* --- services --- */
+    var sv = section("services", "chaud");
+    sv.shell.appendChild(reveal(L.SectionHead({ surtitre: t.servicesSur, titre: t.servicesTitre, serif: t.servicesSerif, lead: t.servicesLead })));
+    var offre = reveal(el("div", "lf-grid lf-grid--deux"));
+    offre.appendChild(L.SpecList({ titre: t.prestationsTitre, items: t.prestations }));
+    offre.appendChild(L.SpecList({ titre: t.universTitre, items: t.univers }));
+    sv.shell.appendChild(offre);
+    var liv = reveal(el("div", "lf-stack"));
+    liv.style.gap = "16px";
+    liv.appendChild(el("h3", "lf-titre-carte", t.livreTitre));
+    var specs = el("div", "lf-grid lf-grid--deux");
+    specs.appendChild(L.SpecList({ titre: t.videosSpecTitre, items: t.videosSpec }));
+    specs.appendChild(L.SpecList({ titre: t.photosSpecTitre, items: t.photosSpec }));
+    liv.appendChild(specs);
+    sv.shell.appendChild(liv);
+    page.appendChild(sv.section);
+
+    /* --- méthode --- */
+    var me = section("etapes");
+    me.shell.appendChild(reveal(L.SectionHead({ surtitre: t.methodeSur, titre: t.methodeTitre, taille: "section", lead: t.methodeLead, ton: "argile" })));
+    me.shell.appendChild(reveal(L.Process({
+      etapes: t.etapes.map(function (e) { return { titre: e[0], texte: e[1] }; })
+    })));
+    page.appendChild(me.section);
+
+    /* --- contact --- */
+    var ct = section("contact", "fort");
+    ct.shell.appendChild(reveal(L.ContactBlock({
+      surtitre: t.contact,
+      titre: t.contactTitre,
+      serif: t.contactSerif,
+      texte: t.contactTexte,
+      liens: LIENS,
+      cta: { label: t.contactCta, href: "mailto:fetter.lucy@gmail.com" }
+    })));
+    page.appendChild(ct.section);
+
+    /* --- pied --- */
+    var pied = el("div", "lf-shell");
+    var inner = el("div", "lf-pied");
+    var nom = el("p", "lf-titre-carte", "Lucy Fetter");
+    var d = el("span", "lf-dot");
+    d.setAttribute("aria-hidden", "true");
+    nom.appendChild(d);
+    inner.appendChild(nom);
+    inner.appendChild(el("p", "lf-legende", t.pied));
+    pied.appendChild(inner);
+    page.appendChild(pied);
+
+    L.observeReveals(page);
+  }
+
+  rendre(langue);
+
+</script>
+</body>
+</html>
