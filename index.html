@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Karla:wght@400;500;600;700&display=swap">
 <style>
-/* ---- jetons du systeme ---- */
+/* ---- jetons ---- */
 :root {
   --surface-000: #fbf8f4;
   --surface-100: #f1e6d8;
@@ -483,8 +483,42 @@
 }
 
 @media (max-width: 600px) {
-  .lf-grid--videos, .lf-grid--photos, .lf-grid--deux { grid-template-columns: minmax(0, 1fr); }
-  .lf-nav__liens { gap: var(--space-4); }
+  .lf-grid--deux { grid-template-columns: minmax(0, 1fr); }
+  .lf-grid--videos, .lf-grid--photos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
+}
+
+/* ---- barre de navigation sur téléphone --------------------------------- */
+
+@media (max-width: 760px) {
+  .lf-nav__inner {
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    padding-block: var(--space-3);
+  }
+
+  .lf-nav__marque { margin-right: auto; font-size: 16px; }
+
+  .lf-lang { margin-left: 0; }
+
+  .lf-nav__inner > .lf-btn {
+    padding: 11px var(--space-4);
+    font-size: 13px;
+  }
+
+  /* Les rubriques passent sur une seconde ligne, défilables du doigt. */
+  .lf-nav__liens {
+    order: 3;
+    width: 100%;
+    gap: var(--space-5);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-block: 2px 4px;
+  }
+
+  .lf-nav__liens::-webkit-scrollbar { display: none; }
+  .lf-nav__lien { white-space: nowrap; }
 }
 
 /* ---- cartes média ---------------------------------------------------- */
