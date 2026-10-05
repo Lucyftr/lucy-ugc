@@ -226,6 +226,10 @@
   color: var(--accent);
 }
 
+/* Un saut de ligne dans le texte source devient un vrai retour à la ligne :
+   une phrase par ligne dans les paragraphes longs, sans balise à écrire. */
+.lf-intro, .lf-corps { white-space: pre-line; }
+
 .lf-intro {
   font-size: 19px;
   line-height: 30px;
@@ -1201,20 +1205,20 @@ body { margin: 0; background: var(--surface-000); }
       langueLabel: "Langue du site",
       heroSurtitre: "Créatrice UGC",
       meta: ["Kinésithérapeute", "28 ans", "Strasbourg", "FR / DE"],
-      heroTexte: "Je crée du contenu vertical pour les marques de sport, de nutrition et de bien-être. Force athlétique, alimentation saine, équipement du quotidien : je filme ce que je pratique.",
+      heroTexte: "Je crée du contenu vertical pour les marques de sport, de nutrition et de bien-être.\nForce athlétique, alimentation saine, équipement du quotidien : je filme ce que je pratique.",
       ctaPrincipal: "Collaborons ensemble",
       ctaVideos: "Voir mes vidéos",
       portraitAlt: "Lucy Fetter en robe claire au bord de la mer, en fin de journée",
       aproposSur: "À propos",
       aproposTitre: "Qui suis-je ?",
-      aproposTexte: "Kinésithérapeute en Allemagne et pratiquante de force athlétique, je m'entraîne cinq fois par semaine. Je filme ce que j'utilise vraiment — compléments, matériel d'entraînement, équipement du quotidien — et, à côté, ma routine cheveux bouclés et mes deux chats.",
+      aproposTexte: "Kinésithérapeute en Allemagne et pratiquante de force athlétique, je m'entraîne cinq fois par semaine.\nJe filme ce que j'utilise vraiment : compléments, matériel d'entraînement, équipement du quotidien.\nÀ côté, ma routine cheveux bouclés et mes deux chats.",
       aproposAlt: "Lucy en tenue de sport dans une salle de musculation",
       couvreTitre: "Ce que je couvre",
-      couvre: ["Fitness et force athlétique", "Nutrition et compléments", "Lifestyle et bien-être", "Beauté — cheveux bouclés", "Voyage", "Contenu animalier (chat)"],
+      couvre: ["Fitness et force athlétique", "Nutrition et compléments", "Lifestyle et bien-être", "Beauté et cheveux bouclés", "Voyage", "Contenu animalier (chat)"],
       portfolioSur: "Portfolio",
       videosTitre: "Mes vidéos",
       videosSerif: "créations UGC",
-      videosLead: "Cinq créations personnelles, tournées et montées par mes soins avec des produits que j'utilise. Cliquez pour lancer la lecture — rien ne démarre tout seul.",
+      videosLead: "Cinq créations personnelles, tournées et montées par mes soins avec des produits que j'utilise.\nCliquez pour lancer la lecture : rien ne démarre tout seul.",
       videos: [
         "Bulk · démonstration produit · voix in · 23 s",
         "Teveo · legging · voix in · 23 s",
@@ -1225,12 +1229,12 @@ body { margin: 0; background: var(--surface-000); }
       perso: "Création personnelle",
       photosTitre: "Mes photos",
       photosSerif: "photos et univers",
-      photosLead: "Format 4:5, lumière naturelle, fichiers haute définition. Trois types de prise de vue — et les univers dans lesquels je sais poser un produit.",
+      photosLead: "Format 4:5, lumière naturelle, fichiers haute définition.\nTrois types de prise de vue, et les univers dans lesquels je sais poser un produit.",
       photoTags: ["Selfie avec le produit", "Produit seul", "Photo esthétique"],
       photos: [
-        ["Selfie avec le produit · gamme Bulk", "Lucy tenant en éventail trois sachets Bulk — whey, collagène et créatine — face caméra"],
-        ["Produit seul · gamme soin capillaire", "Flacons et pots de soins capillaires alignés sur une table en bois"],
-        ["Beauté · cheveux bouclés", "Lucy en gros plan, cheveux bouclés détachés, en lumière du jour"],
+        ["Selfie avec le produit · gamme Bulk", "Lucy tenant en éventail trois sachets Bulk (whey, collagène et créatine) face caméra"],
+        ["Produit seul · gamme Les Secrets de Loly", "Flacons et pots de soins capillaires alignés sur une table en bois"],
+        ["Beauté · Les Secrets de Loly", "Lucy soulevant une mèche, boucles définies sur toute la longueur, lumière du jour"],
         ["Photo esthétique · assiette en terrasse", "Assiette de pâtes au thon et pistache en gros plan, terrasse en arrière-plan flou"],
         ["Duo · contenu à deux", "Lucy et son compagnon sur un toit-terrasse, ville en arrière-plan"],
         ["Voyage · Pouilles", "Ruelle de maisons blanches à toits coniques, fleurs roses au premier plan"],
@@ -1240,7 +1244,7 @@ body { margin: 0; background: var(--surface-000); }
       servicesSur: "Services",
       servicesTitre: "Ce que je propose",
       servicesSerif: "du concept au fichier",
-      servicesLead: "Je prends la création de bout en bout — l'angle, le script, le tournage, le montage — en français ou en allemand.",
+      servicesLead: "Je prends la création de bout en bout : l'angle, le script, le tournage, le montage.\nEn français ou en allemand.",
       prestationsTitre: "Prestations",
       prestations: ["Concept et script (français / allemand)", "Stratégie créative", "Témoignages et avis", "Démonstration de produits", "Unboxing et haul"],
       universTitre: "Univers que je couvre",
@@ -1261,7 +1265,7 @@ body { margin: 0; background: var(--surface-000); }
       ],
       contactTitre: "Travaillons ensemble",
       contactSerif: "j'ai hâte de voir votre produit",
-      contactTexte: "Deux lignes sur votre produit, et je vous réponds avec une idée de vidéo. Français ou allemand.",
+      contactTexte: "Deux lignes sur votre produit, et je vous réponds avec une idée de vidéo.\nFrançais ou allemand.",
       contactCta: "M'écrire",
       pied: "Créatrice UGC · Strasbourg · FR / DE"
     },
@@ -1271,20 +1275,20 @@ body { margin: 0; background: var(--surface-000); }
       langueLabel: "Sprache der Seite",
       heroSurtitre: "UGC-Creatorin",
       meta: ["Physiotherapeutin", "28 Jahre", "Straßburg", "FR / DE"],
-      heroTexte: "Ich erstelle vertikale Inhalte für Marken aus Sport, Ernährung und Wellness. Kraftsport, gesunde Ernährung, Alltagsausrüstung: Ich filme, was ich selbst lebe.",
+      heroTexte: "Ich erstelle vertikale Inhalte für Marken aus Sport, Ernährung und Wellness.\nKraftsport, gesunde Ernährung, Alltagsausrüstung: Ich filme, was ich selbst lebe.",
       ctaPrincipal: "Lassen Sie uns zusammenarbeiten",
       ctaVideos: "Meine Videos ansehen",
       portraitAlt: "Lucy Fetter in hellem Kleid am Meer, am späten Nachmittag",
       aproposSur: "Über mich",
       aproposTitre: "Wer ich bin",
-      aproposTexte: "Ich bin Physiotherapeutin in Deutschland und trainiere fünfmal pro Woche Kraftsport. Ich filme, was ich wirklich benutze — Supplements, Trainingsgeräte, Alltagsausrüstung — und daneben meine Lockenroutine und meine zwei Katzen.",
+      aproposTexte: "Ich bin Physiotherapeutin in Deutschland und trainiere fünfmal pro Woche Kraftsport.\nIch filme, was ich wirklich benutze : Supplements, Trainingsgeräte, Alltagsausrüstung.\nDaneben meine Lockenroutine und meine zwei Katzen.",
       aproposAlt: "Lucy in Sportkleidung in einem Fitnessstudio",
       couvreTitre: "Meine Themen",
-      couvre: ["Fitness und Kraftsport", "Ernährung und Supplements", "Lifestyle und Wohlbefinden", "Beauty — lockiges Haar", "Reisen", "Tier-Content (Katze)"],
+      couvre: ["Fitness und Kraftsport", "Ernährung und Supplements", "Lifestyle und Wohlbefinden", "Beauty und lockiges Haar", "Reisen", "Tier-Content (Katze)"],
       portfolioSur: "Portfolio",
       videosTitre: "Meine Videos",
       videosSerif: "UGC-Kreationen",
-      videosLead: "Fünf eigene Produktionen, von mir gedreht und geschnitten, mit Produkten, die ich selbst benutze. Zum Abspielen klicken — nichts startet von allein.",
+      videosLead: "Fünf eigene Produktionen, von mir gedreht und geschnitten, mit Produkten, die ich selbst benutze.\nZum Abspielen klicken : nichts startet von allein.",
       videos: [
         "Bulk · Produktdemo · Sprecherin im Bild · 23 s",
         "Teveo · Leggings · Sprecherin im Bild · 23 s",
@@ -1295,12 +1299,12 @@ body { margin: 0; background: var(--surface-000); }
       perso: "Eigene Produktion",
       photosTitre: "Meine Fotos",
       photosSerif: "Fotos und Themenwelten",
-      photosLead: "Format 4:5, natürliches Licht, Dateien in hoher Auflösung. Drei Aufnahmearten — und die Welten, in denen ich ein Produkt in Szene setze.",
+      photosLead: "Format 4:5, natürliches Licht, Dateien in hoher Auflösung.\nDrei Aufnahmearten, und die Welten, in denen ich ein Produkt in Szene setze.",
       photoTags: ["Selfie mit Produkt", "Produkt allein", "Ästhetische Aufnahme"],
       photos: [
-        ["Selfie mit Produkt · Bulk-Sortiment", "Lucy hält drei Bulk-Beutel aufgefächert in die Kamera — Whey, Kollagen und Kreatin"],
-        ["Produkt allein · Haarpflegeserie", "Flaschen und Tiegel einer Haarpflegeserie auf einem Holztisch"],
-        ["Beauty · lockiges Haar", "Lucy in Nahaufnahme, offene Locken, bei Tageslicht"],
+        ["Selfie mit Produkt · Bulk-Sortiment", "Lucy hält drei Bulk-Beutel aufgefächert in die Kamera (Whey, Kollagen und Kreatin)"],
+        ["Produkt allein · Les Secrets de Loly", "Flaschen und Tiegel einer Haarpflegeserie auf einem Holztisch"],
+        ["Beauty · Les Secrets de Loly", "Lucy hebt eine Strähne an, definierte Locken über die ganze Länge, bei Tageslicht"],
         ["Ästhetische Aufnahme · Teller auf der Terrasse", "Pasta mit Thunfisch und Pistazie in Nahaufnahme, Terrasse unscharf im Hintergrund"],
         ["Duo · Content zu zweit", "Lucy und ihr Partner auf einer Dachterrasse, Stadt im Hintergrund"],
         ["Reisen · Apulien", "Gasse mit weißen Häusern und Kegeldächern, rosa Blüten im Vordergrund"],
@@ -1310,7 +1314,7 @@ body { margin: 0; background: var(--surface-000); }
       servicesSur: "Leistungen",
       servicesTitre: "Was ich anbiete",
       servicesSerif: "vom Konzept zur Datei",
-      servicesLead: "Ich übernehme die Produktion von Anfang bis Ende — Idee, Skript, Dreh, Schnitt — auf Deutsch oder Französisch.",
+      servicesLead: "Ich übernehme die Produktion von Anfang bis Ende : Idee, Skript, Dreh, Schnitt.\nAuf Deutsch oder Französisch.",
       prestationsTitre: "Leistungen",
       prestations: ["Konzept und Skript (Deutsch / Französisch)", "Kreativstrategie", "Testimonials und Bewertungen", "Produktdemonstration", "Unboxing und Haul"],
       universTitre: "Themenwelten",
@@ -1331,7 +1335,7 @@ body { margin: 0; background: var(--surface-000); }
       ],
       contactTitre: "Arbeiten wir zusammen",
       contactSerif: "ich freue mich auf Ihr Produkt",
-      contactTexte: "Zwei Zeilen zu Ihrem Produkt, und ich antworte mit einer Videoidee. Auf Deutsch oder Französisch.",
+      contactTexte: "Zwei Zeilen zu Ihrem Produkt, und ich antworte mit einer Videoidee.\nAuf Deutsch oder Französisch.",
       contactCta: "Schreiben Sie mir",
       pied: "UGC-Creatorin · Straßburg · FR / DE"
     }
