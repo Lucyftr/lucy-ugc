@@ -1220,7 +1220,7 @@ body { margin: 0; background: var(--surface-000); }
       portfolioSur: "Portfolio",
       videosTitre: "Mes vidéos",
       videosSerif: "créations UGC",
-      videosLead: "Six créations personnelles, tournées et montées par mes soins avec des produits que j'utilise.\nCliquez pour lancer la lecture : rien ne démarre tout seul.",
+      videosLead: "Cinq créations personnelles et une collaboration avec Aroma-Zone, tournées et montées par mes soins.\nCliquez pour lancer la lecture : rien ne démarre tout seul.",
       videos: [
         "Bulk · démonstration produit · voix in · 23 s",
         "Teveo · legging · voix in · 23 s",
@@ -1230,6 +1230,7 @@ body { margin: 0; background: var(--surface-000); }
         "Aroma-Zone · unboxing soin et collagène · 20 s"
       ],
       perso: "Création personnelle",
+      collab: "Collaboration",
       photosTitre: "Mes photos",
       photosSerif: "photos et univers",
       photosLead: "Format 4:5, lumière naturelle, fichiers haute définition.\nTrois types de prise de vue, et les univers dans lesquels je sais poser un produit.",
@@ -1291,7 +1292,7 @@ body { margin: 0; background: var(--surface-000); }
       portfolioSur: "Portfolio",
       videosTitre: "Meine Videos",
       videosSerif: "UGC-Kreationen",
-      videosLead: "Sechs eigene Produktionen, von mir gedreht und geschnitten, mit Produkten, die ich selbst benutze.\nZum Abspielen klicken : nichts startet von allein.",
+      videosLead: "Fünf eigene Produktionen und eine Kooperation mit Aroma-Zone, von mir gedreht und geschnitten.\nZum Abspielen klicken : nichts startet von allein.",
       videos: [
         "Bulk · Produktdemo · Sprecherin im Bild · 23 s",
         "Teveo · Leggings · Sprecherin im Bild · 23 s",
@@ -1301,6 +1302,7 @@ body { margin: 0; background: var(--surface-000); }
         "Aroma-Zone · Unboxing Pflege und Kollagen · 20 s"
       ],
       perso: "Eigene Produktion",
+      collab: "Kooperation",
       photosTitre: "Meine Fotos",
       photosSerif: "Fotos und Themenwelten",
       photosLead: "Format 4:5, natürliches Licht, Dateien in hoher Auflösung.\nDrei Aufnahmearten, und die Welten, in denen ich ein Produkt in Szene setze.",
@@ -1437,7 +1439,7 @@ body { margin: 0; background: var(--surface-000); }
     t.videos.forEach(function (legende, i) {
       gv.appendChild(reveal(L.VideoCard({
         src: srcs[i][0], poster: srcs[i][1], cadre: "telephone",
-        contexte: t.perso, legende: legende
+        contexte: srcs[i][0] === MEDIA.vAroma ? t.collab : t.perso, legende: legende
       })));
     });
     vd.shell.appendChild(gv);
