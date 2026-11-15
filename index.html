@@ -468,7 +468,7 @@
 /* ---- grilles --------------------------------------------------------- */
 
 .lf-grid { display: grid; gap: var(--space-4); }
-.lf-grid--videos { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.lf-grid--videos { grid-template-columns: repeat(6, minmax(0, 1fr)); }
 .lf-grid--photos { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .lf-grid--deux { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); }
 
@@ -1191,11 +1191,13 @@ body { margin: 0; background: var(--surface-000); }
     vPino:    "media/pinofit.mp4",
     vLoly:    "media/secrets-de-loly.mp4",
     vPurina:  "media/purina-one.mp4",
+    vAroma:   "media/aromazone.mp4",
     aBulk:    "media/bulk.jpg",
     aTeveo:   "media/teveo.jpg",
     aPino:    "media/pinofit.jpg",
     aLoly:    "media/secrets-de-loly.jpg",
-    aPurina:  "media/purina-one.jpg"
+    aPurina:  "media/purina-one.jpg",
+    aAroma:   "media/aromazone.jpg"
   };
 
   var T = {
@@ -1218,13 +1220,14 @@ body { margin: 0; background: var(--surface-000); }
       portfolioSur: "Portfolio",
       videosTitre: "Mes vidéos",
       videosSerif: "créations UGC",
-      videosLead: "Cinq créations personnelles, tournées et montées par mes soins avec des produits que j'utilise.\nCliquez pour lancer la lecture : rien ne démarre tout seul.",
+      videosLead: "Six créations personnelles, tournées et montées par mes soins avec des produits que j'utilise.\nCliquez pour lancer la lecture : rien ne démarre tout seul.",
       videos: [
         "Bulk · démonstration produit · voix in · 23 s",
         "Teveo · legging · voix in · 23 s",
         "Pinofit · rouleau de massage · voix in · 24 s",
         "Les Secrets de Loly · routine cheveux · 23 s",
-        "Purina One · contenu animalier · 22 s"
+        "Purina One · contenu animalier · 22 s",
+        "Aroma-Zone · unboxing soin et collagène · 20 s"
       ],
       perso: "Création personnelle",
       photosTitre: "Mes photos",
@@ -1288,13 +1291,14 @@ body { margin: 0; background: var(--surface-000); }
       portfolioSur: "Portfolio",
       videosTitre: "Meine Videos",
       videosSerif: "UGC-Kreationen",
-      videosLead: "Fünf eigene Produktionen, von mir gedreht und geschnitten, mit Produkten, die ich selbst benutze.\nZum Abspielen klicken : nichts startet von allein.",
+      videosLead: "Sechs eigene Produktionen, von mir gedreht und geschnitten, mit Produkten, die ich selbst benutze.\nZum Abspielen klicken : nichts startet von allein.",
       videos: [
         "Bulk · Produktdemo · Sprecherin im Bild · 23 s",
         "Teveo · Leggings · Sprecherin im Bild · 23 s",
         "Pinofit · Massagerolle · Sprecherin im Bild · 24 s",
         "Les Secrets de Loly · Lockenroutine · 23 s",
-        "Purina One · Tier-Content · 22 s"
+        "Purina One · Tier-Content · 22 s",
+        "Aroma-Zone · Unboxing Pflege und Kollagen · 20 s"
       ],
       perso: "Eigene Produktion",
       photosTitre: "Meine Fotos",
@@ -1428,7 +1432,7 @@ body { margin: 0; background: var(--surface-000); }
     var gv = el("div", "lf-grid lf-grid--videos");
     var srcs = [
       [MEDIA.vBulk, MEDIA.aBulk], [MEDIA.vTeveo, MEDIA.aTeveo], [MEDIA.vPino, MEDIA.aPino],
-      [MEDIA.vLoly, MEDIA.aLoly], [MEDIA.vPurina, MEDIA.aPurina]
+      [MEDIA.vLoly, MEDIA.aLoly], [MEDIA.vPurina, MEDIA.aPurina], [MEDIA.vAroma, MEDIA.aAroma]
     ];
     t.videos.forEach(function (legende, i) {
       gv.appendChild(reveal(L.VideoCard({
